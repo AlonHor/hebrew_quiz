@@ -8,12 +8,6 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body><br><br><br><center>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-      function onSubmit(token) {
-        document.getElementById("captcha-form").submit();
-      }
-    </script>
     <form id="captcha-form" action="schnitzel_q.php" method="GET">
     <h1 class="title">איך אומרים בעברית?</h1><br>אנא הכנס שמות משתתפים כאן:<br><br><h2>
     <input type="text" name="name1perm" autocomplete="off"></input><br><br>
