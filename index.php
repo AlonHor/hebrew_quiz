@@ -8,7 +8,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body><br><br><br><center>
-    <form id="captcha-form" action="schnitzel_q.php" method="GET">
+    <form id="captcha-form" action="schnitzel_q.php" method="POST">
     <h1 class="title">איך אומרים בעברית?</h1><br>אנא הכנס שמות משתתפים כאן:<br><br><h2>
     <input type="text" name="name1perm" autocomplete="off"></input><br><br>
     <input type="text" name="name2perm" autocomplete="off"></input><br><br>
