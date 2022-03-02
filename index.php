@@ -7,8 +7,11 @@
 "icon.png" type="image/x-icon">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body><br><br><br><center>
-    <form id="captcha-form" action="schnitzel_q.php" method="POST">
+  <body><label>
+    <a class="info" >Inf="info.php"o</a>
+    </label>
+    <br><br><br><center>
+    <form action="q.php" method="POST">
     <h1 class="title">איך אומרים בעברית?</h1><br>אנא הכנס שמות משתתפים כאן:<br><br><h2>
     <input type="text" name="name1perm" autocomplete="off"></input><br><br>
     <input type="text" name="name2perm" autocomplete="off"></input><br><br>
@@ -18,7 +21,12 @@
     <input type="hidden" name="name2points" autocomplete="off" value=0></input>
     <input type="hidden" name="name3points" autocomplete="off" value=0></input>
     <input type="hidden" name="name4points" autocomplete="off" value=0></input>
-    <input class="button" type="submit" value="התחל לשחק" data-sitekey="6LcOsZseAAAAALXKajp57qBNjDOqYAJxMvmewJ4U" data-callback='onSubmit'></input></h2>
+    <input type="hidden" name="question" autocomplete="off" value="שניצל"></input>
+    <input type="hidden" name="answer" autocomplete="off" value="2"></input>
+    <input type="hidden" name="option1" autocomplete="off" value="פרירה"></input>
+    <input type="hidden" name="option2" autocomplete="off" value="כתיתה"></input>
+    <input type="hidden" name="option3" autocomplete="off" value="שמנון"></input>
+    <input class="button" type="submit" value="התחל לשחק"></input></h2>
     </form>
   </center>
   </body>
