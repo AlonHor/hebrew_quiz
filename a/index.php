@@ -2,19 +2,19 @@
 <html dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="assets/style.css" rel="stylesheet" type="text/css" />
   <title>איך אומרים בעברית?</title>
   <link rel = "icon" href=
-"icon.png" type="image/x-icon">
+"assets/icon.png" type="image/x-icon">
 </head>
 <body>
-<br><br><br><center><center>
+<br><center><center>
 
 <?php 
   $winner_name_temp = $_POST['name' . $_POST['answer']];
   switch($winner_name_temp){
     case "":
-      $winner_name = "אף אחד!";
+      $winner_name = "<div>" . "אף אחד!" . "</div>";
       break;
     default:
       $winner_name = $winner_name_temp;
@@ -22,9 +22,18 @@
   }
 ?>
     
-<h1 class="title">איך אומרים "<?php echo $_POST['question'] ?>" בעברית?</h1><br><br><br><h2>
-השחקנים שצדקו הם: <?php echo $winner_name ?><br>
-והתשובה הנכונה הייתה: <?php echo $_POST['option' . $_POST['answer']] ?><br><br>
+<h1 class="title">איך אומרים "<?php echo $_POST['question'] ?>" בעברית?</h1><br><h2>
+השחקנים שצדקו הם: <div><?php echo $winner_name ?></div><br>
+והתשובה הנכונה היא: <div class="right-answer"><?php 
+
+if ($_POST['answer'] == 4) {
+  $ans = "אין תחליף";
+} else {
+  $ans = $_POST['option' . $_POST['answer']];
+}
+echo $ans
+
+?></div><br><br>
 
 <?php 
   $tok = strtok($winner_name, ',');
@@ -45,9 +54,10 @@
         $_POST['name4points'] = $_POST['name4points'] + 10;
         break;
       default:
-        if ($winner_name != "אף אחד!") {
+        if ($winner_name != "<div>" . "אף אחד!" . "</div>") {
           echo '<script>alert("שחקן לא קיים ניצח את הסיבוב!")</script>';
-          echo '<script>window.location.href = "index.php";</script>';
+          $winner_name = "<div>" . "אף אחד!" . "</div>";
+          break;
         }
     }
     $tok = strtok(",");
@@ -148,7 +158,7 @@
   }
 ?>
 
-<form action="q.php" method="POST">
+<form action="/q" method="POST">
 <input type="hidden" name="name1points" autocomplete="off" value='<?= $_POST["name1points"] ?>'></input>
   <input type="hidden" name="name2points" autocomplete="off" value='<?= $_POST["name2points"] ?>'></input>
   <input type="hidden" name="name3points" autocomplete="off" value='<?= $_POST["name3points"] ?>'></input>
